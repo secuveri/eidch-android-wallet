@@ -31,7 +31,7 @@ android {
         testApplicationId = "ch.secuveri.wallet.test"
         versionCode = Integer.parseInt(properties.getOrDefault("APP_VERSION_CODE", "1") as String)
         versionName = properties.getOrDefault("APP_VERSION_NAME", "100.0.0") as String
-        manifestPlaceholders["appLabel"] = "swiyu"
+        manifestPlaceholders["appLabel"] = "secuveri"
         manifestPlaceholders["deepLinkCredentialOfferScheme"] = schemeCredentialOffer
         manifestPlaceholders["deepLinkPresentationRequestScheme"] = schemePresentationRequest
         manifestPlaceholders["deepLinkPresentationRequestSchemeOID"] = schemePresentationRequestOID
@@ -86,14 +86,14 @@ android {
         create("dev") {
             dimension = "environment"
             applicationIdSuffix = ".dev"
-            manifestPlaceholders["appLabel"] = "swiyu (DEV)"
+            manifestPlaceholders["appLabel"] = "secuveri (DEV)"
             applyFlavorDeeplinkSchemes()
         }
 
         create("ref") {
             dimension = "environment"
             applicationIdSuffix = ".ref"
-            manifestPlaceholders["appLabel"] = "swiyu (REF)"
+            manifestPlaceholders["appLabel"] = "secuveri (REF)"
             applyFlavorDeeplinkSchemes()
             buildConfigField(
                 type = "boolean",
@@ -105,14 +105,14 @@ android {
         create("abn") {
             dimension = "environment"
             applicationIdSuffix = ".abn"
-            manifestPlaceholders["appLabel"] = "swiyu (ABN)"
+            manifestPlaceholders["appLabel"] = "secuveri (ABN)"
             applyFlavorDeeplinkSchemes()
         }
 
         create("sandbox") {
             dimension = "environment"
             applicationIdSuffix = ".sandbox"
-            manifestPlaceholders["appLabel"] = "swiyu Sandbox Wallet"
+            manifestPlaceholders["appLabel"] = "secuveri Sandbox Wallet"
             applyFlavorDeeplinkSchemes("-sandbox")
             ndk {
                 // integrators using the sandbox wallet hopefully use a somewhat current device
