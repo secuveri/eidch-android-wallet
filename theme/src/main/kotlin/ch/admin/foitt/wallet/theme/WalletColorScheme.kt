@@ -79,6 +79,8 @@ data class WalletColorScheme(
 
     val listItemBackground: Color,
 
+    val link: Color,
+
     val inactiveOverlay: Color,
 
     val progressTrackColor: Color,
@@ -210,6 +212,7 @@ data class WalletColorScheme(
                 errorBackgroundDark = WalletColors.red16,
 
                 listItemBackground = WalletColors.white,
+                link = WalletColors.linkBlue,
                 sensitiveBadge = WalletColors.purple91,
                 onSensitiveBadge = WalletColors.purple27,
                 inactiveOverlay = WalletColors.transparentWhite03,
@@ -289,6 +292,7 @@ data class WalletColorScheme(
                 errorBackgroundDark = WalletColors.red16,
 
                 listItemBackground = WalletColors.grey17,
+                link = WalletColors.linkBlueLight,
                 sensitiveBadge = WalletColors.purple18,
                 onSensitiveBadge = WalletColors.purple91,
                 inactiveOverlay = WalletColors.tansparentBlack03,

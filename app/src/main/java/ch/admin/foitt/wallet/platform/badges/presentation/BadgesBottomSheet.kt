@@ -262,12 +262,12 @@ private fun MoreInformationButton(
             role = Role.Button
         },
         text = linkText,
-        color = WalletTheme.colorScheme.error,
+        color = WalletTheme.colorScheme.link,
     )
     Icon(
         painter = painterResource(R.drawable.wallet_ic_chevron_medium),
         contentDescription = null,
-        tint = WalletTheme.colorScheme.error,
+        tint = WalletTheme.colorScheme.link,
     )
 }
 

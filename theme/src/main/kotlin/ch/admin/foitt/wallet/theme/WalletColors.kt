@@ -63,6 +63,9 @@ internal object WalletColors {
     val orange80 = Color(0xFFFFB59C)
     val orange95 = Color(0xFFFFEDE8)
 
+    val linkBlue = Color(0xFF1A65E5)
+    val linkBlueLight = Color(0xFF8AB6F5)
+
     val accentPurple = Color(0xFF0A2A5A)
     val accentBlueDark = Color(0xFFAABEDC)
 

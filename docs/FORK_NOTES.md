@@ -189,5 +189,15 @@ Mirrors the iOS fork's rebrand (see its `docs/FORK_NOTES.md`).
   language-independent, base + night suffice.
 - `app/src/main/res/drawable-{hdpi,xhdpi,xxhdpi}/wallet_background_gradient_{04..07}.png`
   + `wallet_ic_nocredential_bg.png` - hue-remapped to the blue band.
+- `theme/src/main/kotlin/ch/admin/foitt/wallet/theme/WalletColors.kt` +
+  `WalletColorScheme.kt` - new `link` scheme color (`linkBlue` #1A65E5 light,
+  `linkBlueLight` #8AB6F5 dark); upstream styled links with the semantic
+  `error` red.
+- `app/.../platform/composables/Buttons.kt` (TextLink),
+  `app/.../feature/settings/presentation/composables/SettingsItem.kt`,
+  `app/.../platform/badges/presentation/BadgesBottomSheet.kt`,
+  `app/.../platform/nonCompliance/presentation/NonComplianceInfoScreen.kt` -
+  link text/chevron color `colorScheme.error` -> `colorScheme.link`. Real
+  error usages (passphrase errors, suspended badge, delete buttons) keep red.
 - `README.md` - rewritten for the fork; `resources/swiyuBanner.jpg` replaced
   by `resources/secuveriBanner.jpg`.
