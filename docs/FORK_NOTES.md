@@ -93,6 +93,26 @@ Android Keystore usage (StrongBox/TEE-backed keys) is untouched by this fork.
   https), Kotlin package names, DI keys, module names.
 - License: MIT (Swiss Confederation); attribution retained.
 
+## Phase 2 runtime verification (2026-08-23, Samsung device, dev flavor)
+
+- Issuance E2E: pre-auth OID4VCI offer from issuer.secuveri.com accepted;
+  credential shows with status badge "Valid" (token status list on
+  trust.secuveri.com, same list as the iOS fork).
+- Presentation E2E: DCQL request from verifier.secuveri.com
+  (`response_mode: direct_post.jwt`), selective disclosure of 3 claims,
+  verifier state SUCCESS with decrypted claims. The verifier itself must be
+  allowed to fetch the status list: swiyu-verifier's
+  `application.accepted-registry-hosts` defaults to federal hosts only, which
+  produced `unresolvable_status_list` until the deployment was overridden with
+  `{"application":{"accepted-registry-hosts":["trust.secuveri.com"]}}`.
+- Negative test: a live federal Beta-ID verification request (verifier DID on
+  `identifier-reg.trust-infra.swiyu-int.admin.ch`) is blocked by the
+  `trustEnvironmentDidRegex` gate in `ValidatePresentationRequestImpl` with
+  `unknown_registry` ("Request blocked").
+- Deeplink invocation note: `swiyu-verify://?client_id=<url-encoded>&
+  request_uri=<url-encoded>`; `client_id` must match the request object's
+  `client_id` exactly, including the `decentralized_identifier:` prefix.
+
 ## Modified upstream files
 
 (Every change gets a line: path - why.)
