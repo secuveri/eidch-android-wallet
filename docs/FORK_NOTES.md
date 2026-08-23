@@ -181,6 +181,12 @@ Mirrors the iOS fork's rebrand (see its `docs/FORK_NOTES.md`).
   `wallet_ic_swiss_cross.xml` (white cross, credential logo placeholder and
   notification small icon) - all -> secuveri check, same footprint/colors
   (white/white/blue).
+- `app/src/main/res/drawable{,-night}/wallet_ic_bj_info.xml` - the federal
+  "Schweizerische Eidgenossenschaft / Bundesamt für Justiz" logo shown on
+  the Legal notice screen -> secuveri lockup (black/white wordmark from the
+  iOS fork's logo SVGs). The 8 per-language variants
+  (`drawable-{de,fr,it,rm}{,-night}`) are deleted: the lockup is
+  language-independent, base + night suffice.
 - `app/src/main/res/drawable-{hdpi,xhdpi,xxhdpi}/wallet_background_gradient_{04..07}.png`
   + `wallet_ic_nocredential_bg.png` - hue-remapped to the blue band.
 - `README.md` - rewritten for the fork; `resources/swiyuBanner.jpg` replaced

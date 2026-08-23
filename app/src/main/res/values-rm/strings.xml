@@ -405,7 +405,7 @@
     <string name="tk_settings_imprint_appInformation_github_link_text">https://github.com/secuveri</string>
     <string name="tk_settings_imprint_appInformation_sectionTitle">Versiun da l’app</string>
     <string name="tk_settings_imprint_legal_disclaimer_primary">Decleraziun da responsabladad</string>
-    <string name="tk_settings_imprint_publisher_name">Eidgenössisches Justiz- und Polizeidepartement EJPD\nBundesamt für Justiz BJ</string>
+    <string name="tk_settings_imprint_publisher_name">Secuveri GmbH</string>
     <string name="tk_settings_language_device">Lingua dal dispositiv</string>
     <string name="tk_settings_language_title">Lingua</string>
     <string name="tk_settings_securityPrivacy_dataProtection_diagnosticData">Datas da diagnostica</string>
