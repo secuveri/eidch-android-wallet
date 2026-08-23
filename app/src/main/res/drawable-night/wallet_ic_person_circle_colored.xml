@@ -14,16 +14,16 @@
                 android:centerY="90"
                 android:type="sweep">
                 <item
-                    android:color="#FFF01ADB"
+                    android:color="#FF1A65E5"
                     android:offset="0" />
                 <item
                     android:color="#FF9AA9B6"
                     android:offset="0.5" />
                 <item
-                    android:color="#FFF01ADB"
+                    android:color="#FF1A65E5"
                     android:offset="0.75" />
                 <item
-                    android:color="#FFF01ADB"
+                    android:color="#FF1A65E5"
                     android:offset="1" />
             </gradient>
         </aapt:attr>

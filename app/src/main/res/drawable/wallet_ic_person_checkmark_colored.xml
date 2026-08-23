@@ -13,11 +13,11 @@
           android:gradientRadius="163.36"
           android:type="radial">
         <item android:offset="0.18" android:color="#FF9AA9B6"/>
-        <item android:offset="0.75" android:color="#FFF01ADB"/>
+        <item android:offset="0.75" android:color="#FF1A65E5"/>
       </gradient>
     </aapt:attr>
   </path>
   <path
       android:pathData="M95.41,129.71L112.57,146.87C114.52,148.82 117.69,148.82 119.64,146.87L158.46,108.04C160.12,106.39 160.12,103.7 158.46,102.04C156.81,100.39 154.12,100.39 152.46,102.04L119.64,134.87C117.69,136.82 114.52,136.82 112.57,134.87L101.41,123.71C99.75,122.05 97.07,122.05 95.41,123.71C93.75,125.36 93.75,128.05 95.41,129.71Z"
-      android:fillColor="#500A5A"/>
+      android:fillColor="#0A2A5A"/>
 </vector>

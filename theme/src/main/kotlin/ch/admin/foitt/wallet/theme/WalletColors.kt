@@ -54,20 +54,20 @@ internal object WalletColors {
     val red80 = Color(0xFFFFB4AB)
     val red95 = Color(0xFFFFEDEA)
 
-    val purple18 = Color(0xFF500A5A)
-    val purple27 = Color(0xFF64236E)
-    val purple91 = Color(0xFFF8D8FA)
+    val purple18 = Color(0xFF0A2A5A)
+    val purple27 = Color(0xFF17427E)
+    val purple91 = Color(0xFFD8E5FA)
 
     val orange15 = Color(0xFF4A1300)
     val orange50 = Color(0xFFD54500)
     val orange80 = Color(0xFFFFB59C)
     val orange95 = Color(0xFFFFEDE8)
 
-    val accentPurple = Color(0xFF500A5A)
+    val accentPurple = Color(0xFF0A2A5A)
     val accentBlueDark = Color(0xFFAABEDC)
 
     val gradientGray = Color(0xFF9AA9B6)
-    val gradientPink = Color(0xFFF01ADB)
+    val gradientPink = Color(0xFF1A65E5)
 
     val white = Color(0xFFFFFFFF)
     val black = Color(0xFF000000)

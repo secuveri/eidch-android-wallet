@@ -12,7 +12,7 @@
           android:centerY="89.51"
           android:gradientRadius="59.35"
           android:type="sweep">
-        <item android:offset="0.25" android:color="#FFF01ADB"/>
+        <item android:offset="0.25" android:color="#FF1A65E5"/>
         <item android:offset="0.99" android:color="#FF9AA9B6"/>
       </gradient>
     </aapt:attr>

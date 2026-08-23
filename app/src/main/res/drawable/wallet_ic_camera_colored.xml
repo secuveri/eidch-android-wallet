@@ -12,14 +12,14 @@
               android:centerX="90.25"
               android:centerY="89.75"
               >
-        <item android:offset="0" android:color="#FFF01ADB"/>
+        <item android:offset="0" android:color="#FF1A65E5"/>
         <item android:offset="0.75" android:color="#FF9AA9B6"/>
-        <item android:offset="0.75" android:color="#FFF01ADB"/>
-        <item android:offset="1" android:color="#FFF01ADB"/>
+        <item android:offset="0.75" android:color="#FF1A65E5"/>
+        <item android:offset="1" android:color="#FF1A65E5"/>
       </gradient>
     </aapt:attr>
   </path>
   <path
       android:pathData="M74.97,112.89C78.94,116.9 83.93,118.9 89.94,118.9C95.95,118.9 100.96,116.9 104.97,112.89C108.98,108.88 110.99,103.87 110.99,97.86C110.99,91.85 108.98,86.86 104.97,82.89C100.96,78.92 95.95,76.93 89.94,76.93C83.93,76.93 78.94,78.92 74.97,82.89C71,86.86 69.01,91.85 69.01,97.86C69.01,103.87 71,108.88 74.97,112.89Z"
-      android:fillColor="#500A5A"/>
+      android:fillColor="#0A2A5A"/>
 </vector>

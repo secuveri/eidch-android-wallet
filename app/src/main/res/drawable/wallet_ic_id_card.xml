@@ -15,22 +15,22 @@
             android:centerY="164"
             android:gradientRadius="173.22"
             android:type="radial">
-          <item android:offset="0.13" android:color="#FFF01ADB"/>
+          <item android:offset="0.13" android:color="#FF1A65E5"/>
           <item android:offset="1" android:color="#FF9AA9B6"/>
         </gradient>
       </aapt:attr>
     </path>
     <path
         android:pathData="M139.61,94.11H108.32V85.6H139.61V94.11Z"
-        android:fillColor="#500A5A"/>
+        android:fillColor="#0A2A5A"/>
     <path
         android:pathData="M139.61,72.48H108.32V63.97H139.61V72.48Z"
-        android:fillColor="#500A5A"/>
+        android:fillColor="#0A2A5A"/>
     <path
         android:pathData="M95.19,117.4H40.39V115.14C40.39,110.42 42.79,106.63 47.6,103.77C52.4,100.92 59.14,99.49 67.79,99.49C76.44,99.49 83.17,100.92 87.98,103.77C92.79,106.63 95.19,110.42 95.19,115.14V117.4Z"
-        android:fillColor="#500A5A"/>
+        android:fillColor="#0A2A5A"/>
     <path
         android:pathData="M76.4,83.4C74.02,85.76 71.15,86.94 67.77,86.94C64.39,86.94 61.52,85.75 59.16,83.38C56.8,81 55.62,78.13 55.62,74.75C55.62,71.37 56.8,68.5 59.18,66.14C61.55,63.78 64.43,62.6 67.81,62.6C71.18,62.6 74.05,63.78 76.42,66.16C78.78,68.53 79.96,71.41 79.96,74.79C79.96,78.17 78.77,81.04 76.4,83.4Z"
-        android:fillColor="#500A5A"/>
+        android:fillColor="#0A2A5A"/>
   </group>
 </vector>

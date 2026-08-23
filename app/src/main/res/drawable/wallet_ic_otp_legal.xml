@@ -15,13 +15,13 @@
             android:centerY="152"
             android:gradientRadius="179.21"
             android:type="radial">
-          <item android:offset="0" android:color="#FFF01ADB"/>
+          <item android:offset="0" android:color="#FF1A65E5"/>
           <item android:offset="1" android:color="#FF9AA9B6"/>
         </gradient>
       </aapt:attr>
     </path>
     <path
         android:pathData="M68.94,59.71V51.2H133.56V59.71H68.94ZM68.94,81.35V72.84H133.56V81.35H68.94Z"
-        android:fillColor="#500A5A"/>
+        android:fillColor="#0A2A5A"/>
   </group>
 </vector>
