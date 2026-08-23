@@ -9,7 +9,7 @@
       "client_info" : {
         "mobilesdk_app_id" : "1:000000000000:android:0000000000000001",
         "android_client_info" : {
-          "package_name" : "ch.admin.foitt.swiyu.sandbox"
+          "package_name" : "ch.secuveri.wallet.sandbox"
         }
       },
       "oauth_client" : [
@@ -30,7 +30,7 @@
       "client_info" : {
         "mobilesdk_app_id" : "1:000000000000:android:0000000000000001",
         "android_client_info" : {
-          "package_name" : "ch.admin.foitt.swiyu.dev"
+          "package_name" : "ch.secuveri.wallet.dev"
         }
       },
       "oauth_client" : [
@@ -51,7 +51,7 @@
       "client_info" : {
         "mobilesdk_app_id" : "1:000000000000:android:0000000000000002",
         "android_client_info" : {
-          "package_name" : "ch.admin.foitt.swiyu.ref"
+          "package_name" : "ch.secuveri.wallet.ref"
         }
       },
       "oauth_client" : [
@@ -72,7 +72,7 @@
       "client_info" : {
         "mobilesdk_app_id" : "1:000000000000:android:0000000000000003",
         "android_client_info" : {
-          "package_name" : "ch.admin.foitt.swiyu.abn"
+          "package_name" : "ch.secuveri.wallet.abn"
         }
       },
       "oauth_client" : [
@@ -93,7 +93,7 @@
       "client_info" : {
         "mobilesdk_app_id" : "1:000000000000:android:0000000000000004",
         "android_client_info" : {
-          "package_name" : "ch.admin.foitt.swiyu"
+          "package_name" : "ch.secuveri.wallet"
         }
       },
       "oauth_client" : [

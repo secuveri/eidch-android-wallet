@@ -27,8 +27,8 @@ android {
     val schemePresentationRequestProximity = "mdoc"
 
     defaultConfig {
-        applicationId = "ch.admin.foitt.swiyu"
-        testApplicationId = "ch.admin.foitt.swiyu.test"
+        applicationId = "ch.secuveri.wallet"
+        testApplicationId = "ch.secuveri.wallet.test"
         versionCode = Integer.parseInt(properties.getOrDefault("APP_VERSION_CODE", "1") as String)
         versionName = properties.getOrDefault("APP_VERSION_NAME", "100.0.0") as String
         manifestPlaceholders["appLabel"] = "swiyu"
