@@ -113,6 +113,39 @@ Android Keystore usage (StrongBox/TEE-backed keys) is untouched by this fork.
   request_uri=<url-encoded>`; `client_id` must match the request object's
   `client_id` exactly, including the `decentralized_identifier:` prefix.
 
+## Phase 3 rebrand decisions
+
+Mirrors the iOS fork's rebrand (see its `docs/FORK_NOTES.md`).
+
+- Display name: "secuveri" (per-flavor labels in `app/build.gradle.kts`
+  manifest placeholders). Prose uses "secuveri app" / "secuveri wallet";
+  German keeps "App"/"Wallet" capitalized (noun grammar).
+- Strings ×5 (`values`, `values-de`, `values-fr`, `values-it`, `values-rm`):
+  product name swiyu -> secuveri, federal actors (Confederation, Federal
+  Office of Justice, FOITT/BIT/UFIT/OFIT) -> Secuveri, publisher -> Secuveri
+  GmbH (link www.secuveri.com), privacy/terms links -> secuveri.com/privacy
+  and /terms (placeholders), GitHub -> github.com/secuveri.
+  Kept unchanged: still-resolving federal help URLs (help-swiyu-safety,
+  swiyu-informs), Play Store links (`ch.admin.foitt.swiyu`), federal e-ID
+  OTP test-phase strings (disabled feature, inherently federal), and all
+  technical identifiers (URL schemes, package names).
+- Colors: warm swiyu palette -> secuveri blue in `theme/WalletColors.kt`
+  (`purple18/27/91`, `accentPurple`, `gradientPink`; constant names kept)
+  and in 55 vector drawables (`#F01ADB` -> `#1A65E5`, `#500A5A` ->
+  `#0A2A5A`). Semantic reds (`#EA1C21`, `#C00012` family) and the
+  per-language federal logos in `wallet_ic_bj_info.xml` (disabled e-ID flow)
+  untouched.
+- Gradient PNGs (`wallet_background_gradient_04..07`,
+  `wallet_ic_nocredential_bg`, hdpi/xhdpi/xxhdpi) hue-remapped into the blue
+  band with the same script as the iOS recolor (greys/whites preserved).
+- Launcher icons (all 5 flavors): flat `#1A65E5` background + white secuveri
+  check foreground. Splash (`splash_icon.xml`): blue check on the white
+  splash background.
+- Not rebranded: `network_security_config.xml` federal pin domains (pins are
+  additive, they do not block secuveri hosts), the online-verification SDK
+  license text (`res/raw`, third-party legal text), upstream
+  `SandboxEnvironmentSetupRepositoryImpl` (outranked by IntKey(10)).
+
 ## Modified upstream files
 
 (Every change gets a line: path - why.)
@@ -129,3 +162,26 @@ Android Keystore usage (StrongBox/TEE-backed keys) is untouched by this fork.
   deeplink schemes and manifest placeholders unchanged.
 - `app/google-services.json` - placeholder Firebase client entries renamed to
   the `ch.secuveri.wallet*` package names (build requirement, see above).
+- `app/build.gradle.kts` (again, Phase 3) - `appLabel` manifest placeholders
+  swiyu -> secuveri per flavor.
+- `app/src/main/res/values{,-de,-fr,-it,-rm}/strings.xml` - content rebrand,
+  see "Phase 3 rebrand decisions".
+- `theme/src/main/kotlin/ch/admin/foitt/wallet/theme/WalletColors.kt` - warm
+  brand constants remapped to secuveri blue (names kept).
+- 55 vector drawables under `app/src/main/res/drawable*/` - `#F01ADB` ->
+  `#1A65E5`, `#500A5A` -> `#0A2A5A`.
+- `app/src/{main,dev,ref,abn,sandbox}/res/drawable/ic_launcher_background.xml`
+  + `ic_launcher_foreground.xml` - secuveri launcher icon (blue + white
+  check).
+- `app/src/main/res/drawable/splash_icon.xml` - Swiss cross shield -> blue
+  secuveri check.
+- `app/src/main/res/drawable/wallet_ic_dotted_cross.xml` (white dotted swiyu
+  cross, login/lock screens and fallback actor logo),
+  `ic_swiss_cross_small.xml` (red Swiss shield, home navigation icon),
+  `wallet_ic_swiss_cross.xml` (white cross, credential logo placeholder and
+  notification small icon) - all -> secuveri check, same footprint/colors
+  (white/white/blue).
+- `app/src/main/res/drawable-{hdpi,xhdpi,xxhdpi}/wallet_background_gradient_{04..07}.png`
+  + `wallet_ic_nocredential_bg.png` - hue-remapped to the blue band.
+- `README.md` - rewritten for the fork; `resources/swiyuBanner.jpg` replaced
+  by `resources/secuveriBanner.jpg`.

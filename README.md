@@ -1,82 +1,78 @@
-![swiyu GitHub banner](./resources/swiyuBanner.jpg)
+![secuveri GitHub banner](./resources/secuveriBanner.jpg)
 
-# swiyu - Android wallet
+# secuveri for Android
 
-An official Swiss Government project made by the [Federal Office of Information Technology, Systems and Telecommunication FOITT](https://www.bit.admin.ch/en)
-as part of the electronic identity (E-ID) project.
+**secuveri** is an Android identity wallet that holds verifiable KYC
+credentials issued by the Secuveri trust infrastructure. Verify once, reuse
+everywhere: after a single full KYC verification, users can present selected
+claims (e.g. "over 18", "KYC level: full", "nationality") to any relying
+party in the Secuveri trust ecosystem: cryptographically signed, selectively
+disclosed, and instantly revocable, without re-running KYC or over-sharing
+personal data.
 
-## Table of Contents
-- [Overview](#overview)
-- [Installation and building](#installation-and-building)
-- [swiyu Sandbox Wallet](#swiyu-sandbox-wallet)
-- [Missing Features and Known Issues](#missing-features-and-known-issues)
-- [Contributions and feedback](#contributions-and-feedback)
-- [License](#license)
+Built on the OpenID for Verifiable Credentials stack:
 
-## Overview
+- **Issuance:** OID4VCI (pre-authorized code flow, SD-JWT VC)
+- **Presentation:** OID4VP with DCQL and selective disclosure, encrypted
+  responses (`direct_post.jwt`)
+- **Trust:** `did:tdw` DIDs anchored on [trust.secuveri.com](https://trust.secuveri.com);
+  requests from verifiers outside the Secuveri trust environment are refused
+- **Status:** IETF Token Status Lists; credentials show Valid / Suspended /
+  Revoked live from the registry
+- **Keys:** holder keys live in the Android Keystore (StrongBox/TEE);
+  credentials are device-bound
 
-This repository is part of the ecosystem developed for the future official Swiss E-ID.
-The goal of this repository is to engage with the community and collaborate on developing the Swiss ecosystem for E-ID and other credentials.
-We warmly encourage you to engage with us by creating an issue in the repository.
+## About this fork
 
-For more information about the project please visit the [introduction into Public Beta](https://www.eid.admin.ch/en/public-beta-e). The technical documentation of the swiyu Public Beta Trust Infrastructure can be found [here](https://swiyu-admin-ch.github.io/).
+This app is a fork of the official Swiss Government wallet
+[swiyu-admin-ch/eidch-android-wallet](https://github.com/swiyu-admin-ch/eidch-android-wallet)
+by the Federal Office of Information Technology, Systems and
+Telecommunication FOITT, published under the MIT license. The fork is
+deliberately **configuration-first**: the cryptography, key management and
+protocol implementations are unchanged upstream code; the fork repoints the
+trust infrastructure at Secuveri's self-hosted services and rebrands the app.
+
+| | Upstream (swiyu) | This fork (secuveri) |
+|---|---|---|
+| Issuer | swiyu issuance service | issuer.secuveri.com (swiyu-issuer) |
+| Verifier | swiyu verification service | verifier.secuveri.com (swiyu-verifier) |
+| Trust registry / DIDs / status lists | `*.trust-infra.swiyu.admin.ch` | trust.secuveri.com |
+| Application id | `ch.admin.foitt.swiyu` | `ch.secuveri.wallet` |
+
+Every modified upstream file and the reasoning behind it is tracked in
+[docs/FORK_NOTES.md](docs/FORK_NOTES.md).
 
 ## Installation and building
 
-The app requires at least Android 12 (S).
-
-You can also build the app directly using following command:
+Requires at least Android 12 (S) and JDK 21.
 
 ```sh
-$ ./gradlew app:assembleProdRelease
+./gradlew app:assembleDevDebug
 ```
 
-You can then find the generated APK under `app/build/outputs/apk/prod/release/app-prod-release.apk`.
+The `dev`, `ref`, `abn` and `sandbox` flavors all point at the Secuveri
+environment; the `prod` flavor keeps the federal defaults. The generated APK
+lands under `app/build/outputs/apk/<flavor>/<buildType>/`.
 
-> [!NOTE]
-> Please be aware that for building from the command line, you must have set up your own keystore.
+For release builds you must set up your own keystore
+(`RELEASE_STORE_FILE` etc. in your Gradle properties).
 
-## swiyu Sandbox Wallet
+### URI schemes
 
-A sandbox version of the swiyu Wallet application is available for integration and testing purposes.
+The wallet keeps the upstream schemes for compatibility with the
+swiyu-issuer/-verifier deeplink formats:
+`openid-credential-offer`, `openid4vp`, `swiyu`, `swiyu-verify`, `mdoc`.
 
-### Availability
+### Features intentionally disabled
 
-The swiyu Sandbox Wallet is **not published in the Google Play Store**. It can be downloaded directly from:
-
-> [https://github.com/swiyu-admin-ch/eidch-android-wallet/releases](https://github.com/swiyu-admin-ch/eidch-android-wallet/releases)
-
-This version is intended exclusively for testing against the **Sandbox registries**. It cannot be used with the productive registries.
-
-### Current Limitations
-
-The swiyu Sandbox Wallet currently operates without dedicated backend services. Backend functionality may be added in a future release.
-
-As a result, the following features are **not available**:
-
-- Reporting of non-compliant issuers and verifiers
-- App version enforcement
-- Key Attestation and Client Attestation
-  - Consequently, **hardware-bound credentials cannot be issued**
-- e-ID issuance flow
-
-### Supported URI Schemes
-
-The sandbox wallet currently registers only the following URI schemes:
-
-- `openid-credential-offer`
-- `openid4vp`
-- `swiyu-sandbox`
-- `swiyu-verify-sandbox`
-
-## Missing Features and Known Issues
-
-The swiyu Public Beta Trust Infrastructure was deliberately released at an early stage to enable future ecosystem participants. The [feature roadmap](https://github.com/orgs/swiyu-admin-ch/projects/1/views/7) shows the current discrepancies between Public Beta and the targeted productive Trust Infrastructure. There may still be minor bugs or security vulnerabilities in the test system. These are marked as [‘KnownIssues’](https://github.com/swiyu-admin-ch/eidch-android-wallet/issues) in each repository.
-
-## Contributions and feedback
-
-The code for this repository is developed privately and will be released after each sprint. The published code can therefore only be a snapshot of the current development and not a thoroughly tested version. However, we welcome any feedback on the code regarding both the implementation and security aspects. Please follow the guidelines for contributing found in [CONTRIBUTING](./CONTRIBUTING.md).
+Federal-infrastructure features that have no Secuveri counterpart (yet) are
+switched off by configuration, not removed: e-ID request flow, beta-ID/OTP,
+version enforcement, non-compliance reporting, AV/NFC, proximity
+presentment. See
+`app/src/main/java/ch/admin/foitt/wallet/platform/environmentSetup/data/SecuveriEnvironmentSetupRepositoryImpl.kt`.
 
 ## License
 
-This project is licensed under the terms of the MIT license. See the [LICENSE](LICENSE) file for details.
+MIT, see [LICENSE](LICENSE). Original work © Swiss Confederation (FOITT);
+fork modifications © Secuveri. Upstream third-party license attributions are
+retained in the app's About section.
